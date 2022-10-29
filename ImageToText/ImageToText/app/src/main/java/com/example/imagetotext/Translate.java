@@ -73,10 +73,15 @@ public class Translate extends AppCompatActivity {
         fromAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         fromSpinner.setAdapter(fromAdapter);
 
-        toSpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        toSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
                 toLanguageCode = getLanguageCode(toLanguage[i]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
@@ -113,7 +118,7 @@ public class Translate extends AppCompatActivity {
                     Toast.makeText(Translate.this, "Please Select The Language To Make Translation", Toast.LENGTH_SHORT).show();
                 } else {
                     translateText(fromLanguageCode, toLanguageCode, sourceText.getText().toString());
-                    
+
                 }
             }
         });

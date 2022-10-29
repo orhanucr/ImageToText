@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -26,6 +27,7 @@ import android.widget.EditText;
 import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -36,6 +38,7 @@ import com.google.mlkit.vision.text.Text;
 import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
+
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
@@ -100,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(Text text) {
                     progressDialog.dismiss();
-                    //Edit texte yazdırma
                     String recognizedText=text.getText();
                     imageText.setText(recognizedText);
                 }
@@ -242,8 +244,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
-    public void goToTranslate(View view) {
+    public void goToTranslateBtn(View view) {
         Intent intent = new Intent(MainActivity.this,Translate.class);
         startActivity(intent);
     }
