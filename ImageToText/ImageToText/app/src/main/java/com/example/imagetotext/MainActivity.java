@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -34,10 +33,9 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text;
-import com.google.mlkit.vision.text.TextRecognition; //harflaerin yerini buluyor
-import com.google.mlkit.vision.text.TextRecognizer;  //hangi harf olduğunu buluyor
+import com.google.mlkit.vision.text.TextRecognition;
+import com.google.mlkit.vision.text.TextRecognizer;
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
-
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
@@ -243,6 +241,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
 
+    public void goToTranslate(View view) {
+        Intent intent = new Intent(MainActivity.this,Translate.class);
+        startActivity(intent);
     }
 }
