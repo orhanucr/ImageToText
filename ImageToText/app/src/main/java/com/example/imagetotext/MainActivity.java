@@ -248,4 +248,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this,Translate.class);
         startActivity(intent);
     }
+
+    public void goToSpeakerBtn(View view) {
+        Intent intent = new Intent(MainActivity.this,Speaker.class);
+        startActivity(intent);
+    }
 }

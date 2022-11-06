@@ -72,9 +72,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:onClick="goToTranslateBtn"
         android:text="Go To Translate -->"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/goToSpeaker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="1dp"
+        android:onClick="goToSpeakerBtn"
+        android:text="Go To Speaker-->"
         android:textSize="16sp"
         android:textStyle="bold|italic"
         tools:ignore="TouchTargetSizeCheck" />

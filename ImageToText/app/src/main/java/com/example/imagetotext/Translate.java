@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.ml.common.modeldownload.FirebaseModelDownloadConditions;
@@ -24,6 +25,8 @@ import com.google.firebase.ml.naturallanguage.FirebaseNaturalLanguage;
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateLanguage;
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslator;
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslatorOptions;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -47,6 +50,7 @@ public class Translate extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translate);
 
@@ -117,8 +121,9 @@ public class Translate extends AppCompatActivity {
                 } else if (toLanguageCode == 0) {
                     Toast.makeText(Translate.this, "Please Select The Language To Make Translation", Toast.LENGTH_SHORT).show();
                 } else {
+                    System.out.println("hata");
                     translateText(fromLanguageCode, toLanguageCode, sourceText.getText().toString());
-
+                    System.out.println("translateBtncikis");
                 }
             }
         });
@@ -126,11 +131,13 @@ public class Translate extends AppCompatActivity {
     }
 
     private void translateText(int fromLanguageCode, int toLanguageCode, String source) {
+
         translateTV.setText("Downloading model, please wait...");
         FirebaseTranslatorOptions options = new FirebaseTranslatorOptions.Builder()
                 .setSourceLanguage(fromLanguageCode)
                 .setTargetLanguage(toLanguageCode)
                 .build();
+
         FirebaseTranslator translator = FirebaseNaturalLanguage.getInstance().getTranslator(options);
         FirebaseModelDownloadConditions conditions = new FirebaseModelDownloadConditions.Builder().build();
 
@@ -157,6 +164,7 @@ public class Translate extends AppCompatActivity {
             }
         });
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -214,4 +222,5 @@ public class Translate extends AppCompatActivity {
         }
         return languageCode;
     }
+
 }

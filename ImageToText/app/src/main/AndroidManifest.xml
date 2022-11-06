@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.imagetotext">
 
-
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ImageToText"
         tools:targetApi="31">
+        <activity
+            android:name=".Speaker"
+            android:exported="false" />
         <activity
             android:name=".Translate"
             android:exported="false" />

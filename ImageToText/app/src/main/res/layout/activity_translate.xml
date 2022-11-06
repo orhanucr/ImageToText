@@ -51,13 +51,14 @@
             android:elevation="4dp">
 
             <Spinner
+                android:id="@+id/idFromSpinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/idFromSpinner"
+                android:layout_gravity="center"
                 android:layout_margin="3dp"
+                android:layout_weight="1"
                 android:padding="3dp"
-                android:layout_gravity="center" />
+                tools:ignore="TouchTargetSizeCheck" />
 
             <ImageView
                 android:layout_width="0dp"
@@ -67,13 +68,14 @@
                 android:layout_gravity="center"/>
 
             <Spinner
+                android:id="@+id/idToSpinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/idToSpinner"
+                android:layout_gravity="center"
                 android:layout_margin="3dp"
+                android:layout_weight="1"
                 android:padding="3dp"
-                android:layout_gravity="center" />
+                tools:ignore="TouchTargetSizeCheck" />
 
         </LinearLayout>
 
@@ -105,13 +107,14 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/idBtnTranslation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:id="@+id/idBtnTranslation"
             android:text="Translate"
+            android:textAllCaps="false"
             android:textSize="19sp"
-            android:textAllCaps="false"/>
+            />
 
         <TextView
             android:layout_width="match_parent"
