@@ -20,18 +20,18 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.ml.common.modeldownload.FirebaseModelDownloadConditions;
-import com.google.firebase.ml.naturallanguage.FirebaseNaturalLanguage;
-import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateLanguage;
-import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslator;
-import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslatorOptions;
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
+
+import com.google.mlkit.common.model.DownloadConditions;
+import com.google.mlkit.nl.translate.TranslateLanguage;
+import com.google.mlkit.nl.translate.Translation;
+import com.google.mlkit.nl.translate.Translator;
+import com.google.mlkit.nl.translate.TranslatorOptions;
 
 import java.util.ArrayList;
 import java.util.Locale;
 
 public class Translate extends AppCompatActivity {
+
 
     private Spinner fromSpinner, toSpinner;
     private TextInputEditText sourceText;
@@ -46,13 +46,15 @@ public class Translate extends AppCompatActivity {
             "Welsh","Hindi","Urdu","Turkey"};
 
     private static final int REQUEST_PERMISSION_CODE = 1;
-    int languageCode, fromLanguageCode, toLanguageCode = 0;
+    String languageCode,fromLanguageCode, toLanguageCode ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translate);
+
 
         fromSpinner = findViewById(R.id.idFromSpinner);
         toSpinner = findViewById(R.id.idToSpinner);
@@ -116,9 +118,9 @@ public class Translate extends AppCompatActivity {
                 translateTV.setText("");
                 if(sourceText.getText().toString().isEmpty()) {
                     Toast.makeText(Translate.this, "Please enter text to translate", Toast.LENGTH_SHORT).show();
-                } else if (fromLanguageCode == 0) {
+                } else if (fromLanguageCode == null) {
                     Toast.makeText(Translate.this, "Please Select Source Language", Toast.LENGTH_SHORT).show();
-                } else if (toLanguageCode == 0) {
+                } else if (toLanguageCode == null) {
                     Toast.makeText(Translate.this, "Please Select The Language To Make Translation", Toast.LENGTH_SHORT).show();
                 } else {
                     System.out.println("hata");
@@ -130,16 +132,18 @@ public class Translate extends AppCompatActivity {
 
     }
 
-    private void translateText(int fromLanguageCode, int toLanguageCode, String source) {
+    private void translateText(String fromLanguageCode, String toLanguageCode, String source) {
 
         translateTV.setText("Downloading model, please wait...");
-        FirebaseTranslatorOptions options = new FirebaseTranslatorOptions.Builder()
+        TranslatorOptions options = new TranslatorOptions.Builder()
                 .setSourceLanguage(fromLanguageCode)
                 .setTargetLanguage(toLanguageCode)
                 .build();
 
-        FirebaseTranslator translator = FirebaseNaturalLanguage.getInstance().getTranslator(options);
-        FirebaseModelDownloadConditions conditions = new FirebaseModelDownloadConditions.Builder().build();
+        Translator translator = Translation.getClient(options);
+        DownloadConditions conditions = new DownloadConditions.Builder()
+                .requireWifi()
+                .build();
 
         translator.downloadModelIfNeeded(conditions).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -177,48 +181,54 @@ public class Translate extends AppCompatActivity {
 
     // String[] fromLanguage = {"From","English","Afrikaans","Arabic","Belarusian","Bulgarian","Bengali","Catalan","Czech",
     //            "Welsh","Hindi","Urdu","Turkey"};
-    private int getLanguageCode(String language) {
-        int languageCode = 0;
+    private String getLanguageCode(String language) {
+        String languageCode ;
         switch (language) {
             case "English":
-                languageCode = FirebaseTranslateLanguage.EN;
+                languageCode = TranslateLanguage.ENGLISH;
                 break;
             case "Turkey":
-                languageCode = FirebaseTranslateLanguage.TR;
-                break;
-            case "Afrikaans":
-                languageCode = FirebaseTranslateLanguage.AF;
-                break;
-            case "Arabic":
-                languageCode = FirebaseTranslateLanguage.AR;
-                break;
-            case "Belarusian":
-                languageCode = FirebaseTranslateLanguage.BE;
-                break;
-            case "Bulgarian":
-                languageCode = FirebaseTranslateLanguage.BG;
-                break;
-            case "Bengali":
-                languageCode = FirebaseTranslateLanguage.BN;
-                break;
-            case "Catalan":
-                languageCode = FirebaseTranslateLanguage.CA;
-                break;
-            case "Czech":
-                languageCode = FirebaseTranslateLanguage.CS;
-                break;
-            case "Welsh":
-                languageCode = FirebaseTranslateLanguage.CY;
-                break;
-            case "Hindi":
-                languageCode = FirebaseTranslateLanguage.HI;
-                break;
-            case "Urdu":
-                languageCode = FirebaseTranslateLanguage.UR;
+                languageCode = TranslateLanguage.TURKISH;
                 break;
 
+            case "Afrikaans":
+                languageCode = TranslateLanguage.AFRIKAANS;
+                break;
+            case "Arabic":
+                languageCode = TranslateLanguage.ARABIC;
+                break;
+            case "Belarusian":
+                languageCode = TranslateLanguage.BELARUSIAN;
+                break;
+            case "Bulgarian":
+                languageCode = TranslateLanguage.BULGARIAN;
+                break;
+            case "Bengali":
+                languageCode = TranslateLanguage.BENGALI;
+                break;
+            case "Catalan":
+                languageCode = TranslateLanguage.CATALAN;
+                break;
+            case "Czech":
+                languageCode = TranslateLanguage.CZECH;
+                break;
+            case "Welsh":
+                languageCode = TranslateLanguage.WELSH;
+                break;
+            case "Hindi":
+                languageCode = TranslateLanguage.HINDI;
+                break;
+            case "Urdu":
+                languageCode = TranslateLanguage.URDU;
+                break;
+
+
+
             default:
-                languageCode = 0;
+                languageCode ="";
+
+
+
         }
         return languageCode;
     }
