@@ -21,6 +21,9 @@
         android:theme="@style/Theme.ImageToText"
         tools:targetApi="31">
         <activity
+            android:name=".SpeechToText"
+            android:exported="false" />
+        <activity
             android:name=".Speaker"
             android:exported="false" />
         <activity
