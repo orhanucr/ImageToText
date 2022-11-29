@@ -21,6 +21,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -244,18 +245,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    public void goToTranslateBtn(View view) {
-        Intent intent = new Intent(MainActivity.this,Translate.class);
-        startActivity(intent);
+
+    @Override
+    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.screens, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
-    public void goToSpeakerBtn(View view) {
-        Intent intent = new Intent(MainActivity.this,Speaker.class);
-        startActivity(intent);
-    }
-
-    public void goToSpeechBtn(View view) {
-        Intent intent = new Intent(MainActivity.this,SpeechToText.class);
-        startActivity(intent);
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.Translate) {
+            Intent intent = new Intent(MainActivity.this,Translate.class);
+            startActivity(intent);
+        } else if (item.getItemId() == R.id.Speaker) {
+            Intent intent = new Intent(MainActivity.this,Speaker.class);
+            startActivity(intent);
+        } else if (item.getItemId() == R.id.SpeechToText) {
+            Intent intent = new Intent(MainActivity.this,SpeechToText.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

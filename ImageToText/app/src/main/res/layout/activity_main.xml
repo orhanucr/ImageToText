@@ -35,7 +35,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="558dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,7 +47,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/ic_image"
+                android:src="@drawable/gallery"
+                android:layout_margin="30dp"
                 app:strokeWidth="2dp" />
 
             <TextView
@@ -60,48 +61,13 @@
                 android:id="@+id/imageText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:minHeight="48dp"
                 android:textSize="12sp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
 
     </ScrollView>
-
-    <TextView
-        android:id="@+id/goToTranslate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:onClick="goToTranslateBtn"
-        android:text="Go To Translate -->"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/goToSpeaker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="1dp"
-        android:onClick="goToSpeakerBtn"
-        android:text="Go To Speaker-->"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/goToSpeech"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="1dp"
-        android:onClick="goToSpeechBtn"
-        android:text="Go To Speech-->"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        tools:ignore="TouchTargetSizeCheck" />
 
 
 </LinearLayout>
