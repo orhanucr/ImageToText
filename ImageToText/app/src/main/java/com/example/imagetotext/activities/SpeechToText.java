@@ -1,4 +1,4 @@
-package com.example.imagetotext;
+package com.example.imagetotext.activities;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.imagetotext.R;
 
 public class SpeechToText extends AppCompatActivity {
 

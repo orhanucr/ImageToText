@@ -15,5 +15,10 @@
 
     </item>
 
+    <item android:id="@+id/NotePad"
+        android:title="NotePad">
+
+    </item>
+
 
 </menu>

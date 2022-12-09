@@ -1,9 +1,8 @@
-package com.example.imagetotext;
+package com.example.imagetotext.activities;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +12,6 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -26,9 +24,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.PopupMenu;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.imagetotext.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -246,6 +244,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(@NonNull Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -256,13 +256,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.Translate) {
-            Intent intent = new Intent(MainActivity.this,Translate.class);
+            Intent intent = new Intent(MainActivity.this, Translate.class);
             startActivity(intent);
         } else if (item.getItemId() == R.id.Speaker) {
-            Intent intent = new Intent(MainActivity.this,Speaker.class);
+            Intent intent = new Intent(MainActivity.this, Speaker.class);
             startActivity(intent);
         } else if (item.getItemId() == R.id.SpeechToText) {
-            Intent intent = new Intent(MainActivity.this,SpeechToText.class);
+            Intent intent = new Intent(MainActivity.this, SpeechToText.class);
+            startActivity(intent);
+        } else if (item.getItemId() == R.id.NotePad) {
+            Intent intent = new Intent(MainActivity.this, NotePad.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);

@@ -4,11 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/background.xml" value="0.1525" />
+        <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/background_add_button.xml" value="0.1775" />
+        <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/background_done_button.xml" value="0.184" />
+        <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/background_search.xml" value="0.1785" />
+        <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/background_subtitle_indicator.xml" value="0.184" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/ic_add_photo.xml" value="0.1525" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/ic_document_scanner.xml" value="0.1525" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/ic_image.xml" value="0.1525" />
+        <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/layout/activity_create_note.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/layout/activity_main2.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/layout/activity_note_pad.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/layout/activity_speaker.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/layout/activity_speech_to_text.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/layout/activity_translate.xml" value="0.1" />
