@@ -23,6 +23,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     MaterialButton inputImageBtn, getTextBtn;
     ShapeableImageView imageView;
     EditText imageText;
+    ImageView menuBtn;
     Uri imageUri = null;
     static final int CAMERA_REQUEST_CODE = 100;
     static final int STORAGE_REQUEST_CODE = 101;
@@ -60,10 +62,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        menuBtn = findViewById(R.id.menuBtn);
         inputImageBtn = findViewById(R.id.inputImageBtn);
         getTextBtn = findViewById(R.id.getTextBtn);
         imageView = findViewById(R.id.imageView);
         imageText = findViewById(R.id.imageText);
+
 
         cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
         storagePermissions = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -72,6 +76,13 @@ public class MainActivity extends AppCompatActivity {
         progressDialog.setTitle("Please wait");
         progressDialog.setCanceledOnTouchOutside(false);
         textRecognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
+
+        menuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showMenu();
+            }
+        });
 
         inputImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -244,30 +255,33 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void showMenu() {
+        PopupMenu popupMenu = new PopupMenu(this, menuBtn);
 
+        popupMenu.getMenu().add(Menu.NONE, 1, 1, "Translate");
+        popupMenu.getMenu().add(Menu.NONE, 2, 2, "Speaker");
+        popupMenu.getMenu().add(Menu.NONE, 3, 3, "NotePad");
 
-    @Override
-    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.screens, menu);
-        return super.onCreateOptionsMenu(menu);
+        popupMenu.show();
+
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                int id = menuItem.getItemId();
+                if (id == 1) {
+                    Intent intent = new Intent(MainActivity.this, Translate.class);
+                    startActivity(intent);
+                } else if (id == 2) {
+                    Intent intent = new Intent(MainActivity.this, Speaker.class);
+                    startActivity(intent);
+                } else if (id == 3) {
+                    Intent intent = new Intent(MainActivity.this, NotePad.class);
+                    startActivity(intent);
+                }
+                return true;
+            }
+        });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.Translate) {
-            Intent intent = new Intent(MainActivity.this, Translate.class);
-            startActivity(intent);
-        } else if (item.getItemId() == R.id.Speaker) {
-            Intent intent = new Intent(MainActivity.this, Speaker.class);
-            startActivity(intent);
-        } else if (item.getItemId() == R.id.SpeechToText) {
-            Intent intent = new Intent(MainActivity.this, SpeechToText.class);
-            startActivity(intent);
-        } else if (item.getItemId() == R.id.NotePad) {
-            Intent intent = new Intent(MainActivity.this, NotePad.class);
-            startActivity(intent);
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
 }

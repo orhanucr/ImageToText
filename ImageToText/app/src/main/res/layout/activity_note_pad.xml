@@ -21,6 +21,7 @@
         android:textSize="@dimen/_20ssp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
         />
 
     <LinearLayout
@@ -55,7 +56,7 @@
             android:importantForAutofill="no"
             android:includeFontPadding="false"
             android:inputType="text"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textColorHint="@color/colorTextHint"
             android:textSize="@dimen/_13ssp"/>
 

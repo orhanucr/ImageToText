@@ -8,8 +8,39 @@
     android:padding="16dp"
     tools:context=".activities.Speaker">
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Speaker"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginStart="4dp"
+            android:textSize="23sp"
+            android:layout_gravity="center"></TextView>
+
+        <ImageView
+            android:id="@+id/speaker_image"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/ic_speaker" />
+
+    </LinearLayout>
+
     <EditText
         android:id="@+id/edit_text"
+        android:layout_marginTop="@dimen/_25sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"

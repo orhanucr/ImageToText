@@ -6,6 +6,7 @@
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/background.xml" value="0.1525" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/background_add_button.xml" value="0.1775" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/background_done_button.xml" value="0.184" />
+        <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/background_note.xml" value="0.184" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/background_search.xml" value="0.1785" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/background_subtitle_indicator.xml" value="0.184" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/drawable/ic_add_photo.xml" value="0.1525" />
@@ -17,7 +18,8 @@
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/layout/activity_note_pad.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/layout/activity_speaker.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/layout/activity_speech_to_text.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/layout/activity_translate.xml" value="0.1" />
+        <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/layout/activity_translate.xml" value="0.536" />
+        <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/layout/item_container_note.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/layout/spinner_item.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ucaro/AndroidStudioProjects/ImageToText/ImageToText/app/src/main/res/menu/screens.xml" value="0.6115288220551378" />
       </map>

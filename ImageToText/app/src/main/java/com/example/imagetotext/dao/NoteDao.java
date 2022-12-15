@@ -12,7 +12,6 @@ import java.util.List;
 
 @Dao
 public interface NoteDao {
-
     @Query("SELECT * FROM notes ORDER BY id DESC")
     List<Note> getAllNotes();
 
@@ -20,6 +19,5 @@ public interface NoteDao {
     void insertNote(Note note);
 
     @Delete
-    void delete(Note note);
-
+    void deleteNote(Note note);
 }
