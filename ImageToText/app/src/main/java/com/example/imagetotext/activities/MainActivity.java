@@ -18,10 +18,13 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
@@ -40,6 +43,7 @@ import com.google.mlkit.vision.text.TextRecognizer;
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
 
 import java.io.IOException;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     MaterialButton inputImageBtn, getTextBtn;
@@ -56,12 +60,17 @@ public class MainActivity extends AppCompatActivity {
 
     TextRecognizer textRecognizer;
 
+    //Speaker Activity
+    private TextToSpeech mTTS;
+    private Button mButtonSpeak;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mButtonSpeak = findViewById(R.id.button_speak);
         menuBtn = findViewById(R.id.menuBtn);
         inputImageBtn = findViewById(R.id.inputImageBtn);
         getTextBtn = findViewById(R.id.getTextBtn);
@@ -100,6 +109,51 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //Speaker Code
+        mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    int result = mTTS.setLanguage(Locale.ENGLISH);
+
+                    if (result == TextToSpeech.LANG_MISSING_DATA
+                            || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                        Log.e("TTS", "Language not supported");
+                    } else {
+                        mButtonSpeak.setEnabled(true);
+                    }
+                } else {
+                    Log.e("TTS", "Initialization failed");
+                }
+            }
+        });
+
+        mButtonSpeak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (imageText == null) {
+                    Toast.makeText(MainActivity.this,"Pls enter text!",Toast.LENGTH_LONG).show();
+                }else {
+                    speak();
+                }
+            }
+        });
+    }
+
+    private void speak() {
+        String text = imageText.getText().toString();
+        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mTTS != null) {
+            mTTS.stop();
+            mTTS.shutdown();
+        }
+
+        super.onDestroy();
     }
 
     private void getImageFromText() {
@@ -282,6 +336,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
 }
