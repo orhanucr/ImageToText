@@ -3,16 +3,20 @@
  
 #-----------------#
 
- //Kameradan çekilen bir fotoğrafta ki yada galeriden seçilen bir fotoğrafta ki metinleri algılayıp text
+ 	//Kameradan çekilen bir fotoğrafta ki yada galeriden seçilen bir fotoğrafta ki metinleri algılayıp text
 	dosyası halinde çıkartıyor.
+	
 	//Bu textleri speaker aracılığı ile kullanıcıya dinleme imkanı veriyor.
+	
 	//Uygulama içerisinde çoklu dil destekli translate mevcut.
+	
 	//Uygulamanın kendi not defteri mevcut(Room database).
+	
 	//Kullanıcı ses ile de not ekleyebilir.
  
  #------------------#
  
- //text algılama
+    //text algılama
     implementation 'com.google.android.gms:play-services-mlkit-text-recognition:18.0.2'
 
     //Firebase
