@@ -2,6 +2,7 @@
  Application to detect the text in the picture and convert it to text file
  
 #-----------------#
+
  //Kameradan çekilen bir fotoğrafta ki yada galeriden seçilen bir fotoğrafta ki metinleri algılayıp text
 	dosyası halinde çıkartıyor.
 	//Bu textleri speaker aracılığı ile kullanıcıya dinleme imkanı veriyor.
@@ -10,6 +11,7 @@
 	//Kullanıcı ses ile de not ekleyebilir.
  
  #------------------#
+ 
  //text algılama
     implementation 'com.google.android.gms:play-services-mlkit-text-recognition:18.0.2'
 
