@@ -1,5 +1,6 @@
 # ImageToText
- Application to detect the text in the picture and convert it to text file
+ Application to detect the text in the picture and convert it to text file.
+ The images of the pages are in the ImageToText Pages Images folder.
  
 #-----------------#
 
@@ -55,3 +56,4 @@
 
     //Speaker
     import android.speech.tts.TextToSpeech;
+    
