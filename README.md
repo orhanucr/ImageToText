@@ -14,6 +14,8 @@
 	//Uygulamanın kendi not defteri mevcut(Room database).
 	
 	//Kullanıcı ses ile de not ekleyebilir.
+	
+	//Uygulama ekran görüntüleri "ImageToText Pages Images" klasörü içindedir.
  
  #------------------#
  
