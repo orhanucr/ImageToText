@@ -2,7 +2,6 @@
  Application to detect the text in the picture and convert it to text file.
  The images of the pages are in the ImageToText Pages Images folder.
  
-#-----------------#
 
  	//Kameradan çekilen bir fotoğrafta ki yada galeriden seçilen bir fotoğrafta ki metinleri algılayıp text
 	dosyası halinde çıkartıyor.
@@ -59,7 +58,7 @@ import com.google.mlkit.nl.translate.TranslatorOptions;
 </code></pre>
     
 
-<h2>Uygulama Ekran Görüntüleri</h2>
+<h2>Application Screenshots</h2>
 <p float="left">
   <img src=https://github.com/orhanucr/ImageToText/assets/100219838/6dfcafdd-9fd0-47d3-95c7-3d6f57598ad6 width="27%" />
   <img src=https://github.com/orhanucr/ImageToText/assets/100219838/8f7dcf48-2afd-4ced-b728-52d550f7bcfd width="27%" />
