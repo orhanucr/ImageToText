@@ -19,6 +19,7 @@ Fotoğraflarda ki metni algılayan ve metni bir metin dosyasına dönüştüren 
 - [com.intuit.ssp:ssp-android:1.0.6](https://github.com/intuit/ssp)
 - [com.makeramen:roundedimageview:2.3.0](https://github.com/makeramen/roundedimageview)
 
+
 <h2>Translate</h2>
 
 <h3>Import</h3>
