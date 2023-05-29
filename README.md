@@ -1,18 +1,5 @@
 # ImageToText
- Application to detect the text in the picture and convert it to text file.
- The images of the pages are in the ImageToText Pages Images folder.
- 
-
- 	//Kameradan çekilen bir fotoğrafta ki yada galeriden seçilen bir fotoğrafta ki metinleri algılayıp text
-	dosyası halinde çıkartıyor.
-	
-	//Bu textleri speaker aracılığı ile kullanıcıya dinleme imkanı veriyor.
-	
-	//Uygulama içerisinde çoklu dil destekli translate mevcut.
-	
-	//Uygulamanın kendi not defteri mevcut(Room database).
-	
-	//Kullanıcı ses ile de not ekleyebilir.
+ Resimdeki metni algılayan ve metni bir metin dosyasına dönüştüren bir uygulama geliştirilmiştir. Uygulama, kullanıcının kamera ile çektiği veya galeriden seçtiği bir fotoğraftaki metni algılayarak metin dosyası olarak kaydetmektedir. Ayrıca, metinleri kullanıcıya dinleme imkanı sağlayan bir hoparlör özelliğiyle sunmaktadır. Uygulama, çoklu dil desteğiyle çeviri yapabilme özelliğine de sahiptir, böylece metinleri farklı dillere çevirebilirsiniz. Uygulamada ayrıca kendi not defteri bulunmaktadır ve bu notlar Room veritabanı kullanılarak saklanmaktadır. Kullanıcı ayrıca metin eklemek için sesli giriş yapma seçeneğine de sahiptir.
 	
  
 # Dependencies
