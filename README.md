@@ -1,4 +1,4 @@
-# ImageToText
+# Image To Text
 Fotoğraflarda ki metni algılayan ve metni bir metin dosyasına dönüştüren bir uygulama geliştirilmiştir. Uygulama, kullanıcının kamera ile çektiği veya galeriden seçtiği bir fotoğraftaki metni algılayarak metin dosyası olarak kaydetmektedir. Ayrıca, metinleri kullanıcıya dinleme imkanı sağlayan bir hoparlör özelliğiyle sunmaktadır. Uygulama, çoklu dil desteğiyle çeviri yapabilme özelliğine de sahiptir, böylece metinleri farklı dillere çevirebilirsiniz. Uygulamada ayrıca kendi not defteri bulunmaktadır ve bu notlar Room veritabanı kullanılarak saklanmaktadır. Kullanıcı ayrıca metin eklemek için sesli giriş yapma seçeneğine de sahiptir.
 	
  
