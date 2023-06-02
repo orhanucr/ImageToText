@@ -3,7 +3,7 @@ Fotoğraflarda ki metni algılayan ve metni bir metin dosyasına dönüştüren 
 	
  
 # Dependencies
-
+ 
 - [com.google.android.gms:play-services-mlkit-text-recognition:18.0.2](https://developers.google.com/android/guides/releases#november_10_2022)
 - [com.google.firebase:firebase-bom:31.0.2](https://firebase.google.com/support/release-notes/android#latest_sdk_versions)
 - [com.google.firebase:firebase-analytics](https://firebase.google.com/support/release-notes/android#latest_sdk_versions)
