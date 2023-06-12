@@ -1,65 +1,52 @@
-# ImageToText
- Application to detect the text in the picture and convert it to text file.
- The images of the pages are in the ImageToText Pages Images folder.
- 
-#-----------------#
-
- 	//Kameradan çekilen bir fotoğrafta ki yada galeriden seçilen bir fotoğrafta ki metinleri algılayıp text
-	dosyası halinde çıkartıyor.
-	
-	//Bu textleri speaker aracılığı ile kullanıcıya dinleme imkanı veriyor.
-	
-	//Uygulama içerisinde çoklu dil destekli translate mevcut.
-	
-	//Uygulamanın kendi not defteri mevcut(Room database).
-	
-	//Kullanıcı ses ile de not ekleyebilir.
+# Image To Text
+Fotoğraflarda ki metni algılayan ve metni bir metin dosyasına dönüştüren bir uygulama geliştirilmiştir. Uygulama, kullanıcının kamera ile çektiği veya galeriden seçtiği bir fotoğraftaki metni algılayarak metin dosyası olarak kaydetmektedir. Ayrıca, metinleri kullanıcıya dinleme imkanı sağlayan bir hoparlör özelliğiyle sunmaktadır. Uygulama, çoklu dil desteğiyle çeviri yapabilme özelliğine de sahiptir, böylece metinleri farklı dillere çevirebilirsiniz. Uygulamada ayrıca kendi not defteri bulunmaktadır ve bu notlar Room veritabanı kullanılarak saklanmaktadır. Kullanıcı ayrıca metin eklemek için sesli giriş yapma seçeneğine de sahiptir.
 	
  
- #------------------#
+# Dependencies
  
-    //text algılama
-    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:18.0.2'
+- [com.google.android.gms:play-services-mlkit-text-recognition:18.0.2](https://developers.google.com/android/guides/releases#november_10_2022)
+- [com.google.firebase:firebase-bom:31.0.2](https://firebase.google.com/support/release-notes/android#latest_sdk_versions)
+- [com.google.firebase:firebase-analytics](https://firebase.google.com/support/release-notes/android#latest_sdk_versions)
+- [com.google.firebase:firebase-core:21.1.1](https://firebase.google.com/support/release-notes/android#latest_sdk_versions)
+- [com.google.mlkit:translate:17.0.1](https://developers.google.com/ml-kit/release-notes/android#17.0.0)
+- [junit:junit:4.13.2](https://junit.org/junit4/)
+- [androidx.test.ext:junit:1.1.3](https://developer.android.com/jetpack/androidx/releases/test#1.1.3)
+- [androidx.test.espresso:espresso-core:3.4.0](https://developer.android.com/jetpack/androidx/releases/test#3.4.0)
+- [androidx.room:room-runtime:2.4.3](https://developer.android.com/jetpack/androidx/releases/room#2.4.3)
+- [androidx.room:room-compiler:2.4.3](https://developer.android.com/jetpack/androidx/releases/room#2.4.3)
+- [androidx.recyclerview:recyclerview:1.2.1](https://developer.android.com/jetpack/androidx/releases/recyclerview#1.2.1)
+- [com.intuit.sdp:sdp-android:1.0.6](https://github.com/intuit/sdp)
+- [com.intuit.ssp:ssp-android:1.0.6](https://github.com/intuit/ssp)
+- [com.makeramen:roundedimageview:2.3.0](https://github.com/makeramen/roundedimageview)
 
-    //Firebase
-    implementation platform('com.google.firebase:firebase-bom:31.0.2')
-    implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-core:21.1.1'
-    implementation 'com.google.mlkit:translate:17.0.1'
 
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+<h2>Translate</h2>
 
-    //Room
-    implementation "androidx.room:room-runtime:2.4.3"
-    annotationProcessor "androidx.room:room-compiler:2.4.3"
+<h3>Import</h3>
 
-    //Recyclerview
-    implementation "androidx.recyclerview:recyclerview:1.2.1"
+<pre><code>import com.google.mlkit.common.model.DownloadConditions;
+import com.google.mlkit.nl.translate.TranslateLanguage;
+import com.google.mlkit.nl.translate.Translation;
+import com.google.mlkit.nl.translate.Translator;
+import com.google.mlkit.nl.translate.TranslatorOptions;
+</code></pre>
 
-    //Scalable Size Unit (Support for different screen sizes)
-    implementation "com.intuit.sdp:sdp-android:1.0.6"
-    implementation "com.intuit.ssp:ssp-android:1.0.6"
+<h2>Speech</h2>
 
-    //Rounded ImageView
-    implementation "com.makeramen:roundedimageview:2.3.0"
-    
-    //Translate
-    import com.google.mlkit.common.model.DownloadConditions;
-    import com.google.mlkit.nl.translate.TranslateLanguage;
-    import com.google.mlkit.nl.translate.Translation;
-    import com.google.mlkit.nl.translate.Translator;
-    import com.google.mlkit.nl.translate.TranslatorOptions;
- 
-    //Speech
-    import android.speech.RecognizerIntent;
+<h3>Import</h3>
 
-    //Speaker
-    import android.speech.tts.TextToSpeech;
+<pre><code>import android.speech.RecognizerIntent;
+</code></pre>
+
+<h2>Speaker</h2>
+
+<h3>Import</h3>
+
+<pre><code>import android.speech.tts.TextToSpeech;
+</code></pre>
     
 
-<h2>Uygulama Ekran Görüntüleri</h2>
+<h2>Application Screenshots</h2>
 <p float="left">
   <img src=https://github.com/orhanucr/ImageToText/assets/100219838/6dfcafdd-9fd0-47d3-95c7-3d6f57598ad6 width="27%" />
   <img src=https://github.com/orhanucr/ImageToText/assets/100219838/8f7dcf48-2afd-4ced-b728-52d550f7bcfd width="27%" />
